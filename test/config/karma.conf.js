@@ -12,8 +12,11 @@ module.exports = function (config) {
 			'js/**/*.js',
 			'test/unit/**/*.js'
 		],
+                reporters: ['progress', 'coverage'],
+                preprocessors: { '*/**/*.js': ['coverage'] },
+                coverageReporter: { type : 'html',dir : 'coverage/'},
 		autoWatch: true,
-		singleRun: false,
-		browsers: ['Chrome', 'Firefox']
+		singleRun: true,
+		browsers: ['Firefox']
 	});
 };
