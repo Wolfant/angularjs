@@ -17,6 +17,6 @@ module.exports = function (config) {
                 coverageReporter: { type : 'html',dir : 'coverage/'},
 		autoWatch: true,
 		singleRun: true,
-		browsers: ['Firefox']
+		browsers: ['Chrome','Firefox']
 	});
 };
