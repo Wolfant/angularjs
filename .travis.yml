@@ -1,6 +1,19 @@
+env:
+  - SURGE_LOGIN=antonio@insuasti.ec
+  - SURGE_TOKEN=XXXXX
+
 language: node_js
 node_js:
   - 6.9.5
+
+os:
+  - linux
+  - osx
+
+matrix:
+  allow_failures:
+    - os: osx
+
 before_install:  
  - export CHROME_BIN=/usr/bin/google-chrome
  - export DISPLAY=:99.0
@@ -10,4 +23,22 @@ before_install:
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
 before_script:
- - npm install  
+ - npm install
+  
+# deploy qa coverag and app on surge
+# deploy prod app on heroku
+#deploy:
+#  - provider: surge
+#    project: ./static/
+#    domain: example.surge.sh
+#    skip_cleanup: true
+#    on: 
+#      branch: test
+#  - provider: heroku
+#    api-key:
+#      secure:XXXXX
+#    on:
+#      branch: master
+    
+
+
