@@ -24,7 +24,7 @@ before_deploy:
 
 deploy:
 # coverage report on:
-# domain/coverage/Firefox/
+# domain/coverage/report/
   - provider: surge
     domain: wolfantqa.surge.sh
     skip_cleanup: true
