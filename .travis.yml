@@ -1,24 +1,34 @@
 language: node_js
 node_js:
 - 6.9.5
+addons:
+  firefox: "55.0"
 
 before_install:
-- export CHROME_BIN=/usr/bin/google-chrome
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sudo apt-get update
-- sudo apt-get install -y libappindicator1 fonts-liberation
-- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-- sudo dpkg -i google-chrome*.deb
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+
 before_script:
-- npm install
+  - npm install
+
+
+before_deploy:
+  - ./.travis/deploy.sh
 
 deploy:
+# coverage report on:
+# domain/coverage/report/
   - provider: surge
     domain: wolfantqa.surge.sh
     skip_cleanup: true
     on:
       branch: test
+
   - provider: heroku
     app: angularjs-ws
     on:
