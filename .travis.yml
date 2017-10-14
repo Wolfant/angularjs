@@ -14,13 +14,13 @@ before_script:
 - npm install
 
 deploy:
-  matrix:
   - provider: surge
-    domain: wolfant.surge.sh
+    domain: wolfantqa.surge.sh
     skip_cleanup: true
     on:
       branch: test
   - provider: heroku
+    app: angularjs-ws
     on:
       branch: master
     api_key:
