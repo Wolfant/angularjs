@@ -14,19 +14,14 @@ before_install:
   - sudo dpkg -i google-chrome*.deb
 
 before_script:
-- npm install
+  - npm install
 
 script:
   - "npm rebuild node-sass"
   - "webpack"
 
-#
 before_deploy:
-  - cd coverage/
-  - mv Firefox\ 55.0.0\ \(Fedora\ 0.0.0\) Firefox
-  - cd ..
-  on:
-  branch: test
+  - ./.travis/deploy.sh
 
 deploy:
 # coverage report on:
