@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - 6.9.5
+addons:
+  firefox: "55.0"
 
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
@@ -10,14 +12,25 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
+
 before_script:
 - npm install
 
-before_deploy:
-  - ls coverage/
-   
-deploy:
+script:
+  - "npm rebuild node-sass"
+  - "webpack"
 
+#
+before_deploy:
+  - cd coverage/
+  - mv Firefox\ 55.0.0\ \(Fedora\ 0.0.0\) Firefox
+  - cd ..
+  on:
+  branch: test
+
+deploy:
+# coverage report on:
+# domain/coverage/Firefox/
   - provider: surge
     domain: wolfantqa.surge.sh
     skip_cleanup: true
