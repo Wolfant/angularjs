@@ -14,7 +14,6 @@ before_script:
 - npm install
 
 deploy:
-  matrix:
   - provider: surge
     domain: wolfantqa.surge.sh
     skip_cleanup: true
