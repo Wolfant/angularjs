@@ -1,6 +1,6 @@
 env:
-- SURGE_LOGIN=antonio@insuasti.ec
-- SURGE_TOKEN=acf109abfc4f877e82b5c5dcb76c042f
+  - SURGE_LOGIN=antonio@insuasti.ec
+  - SURGE_TOKEN=acf109abfc4f877e82b5c5dcb76c042f
 language: node_js
 node_js:
 - 6.9.5
