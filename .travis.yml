@@ -1,44 +1,35 @@
 env:
-  - SURGE_LOGIN=antonio@insuasti.ec
-  - SURGE_TOKEN=XXXXX
-
+- SURGE_LOGIN=antonio@insuasti.ec
+- SURGE_TOKEN=acf109abfc4f877e82b5c5dcb76c042f
 language: node_js
 node_js:
-  - 6.9.5
-
+- 6.9.5
 os:
-  - linux
-  - osx
-
+- linux
+- osx
 matrix:
   allow_failures:
-    - os: osx
-
-before_install:  
- - export CHROME_BIN=/usr/bin/google-chrome
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - sudo apt-get update
- - sudo apt-get install -y libappindicator1 fonts-liberation
- - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
- - sudo dpkg -i google-chrome*.deb
+  - os: osx
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt-get update
+- sudo apt-get install -y libappindicator1 fonts-liberation
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
 before_script:
- - npm install
-  
-# deploy qa coverag and app on surge
-# deploy prod app on heroku
-#deploy:
-#  - provider: surge
-#    project: ./static/
-#    domain: example.surge.sh
-#    skip_cleanup: true
-#    on: 
-#      branch: test
-#  - provider: heroku
-#    api-key:
-#      secure:XXXXX
-#    on:
-#      branch: master
-    
+- npm install
 
-
+deploy:
+  matrix:
+  - provider: surge
+    domain: wolfantqa.surge.sh
+    skip_cleanup: true
+    on:
+      branch: test
+  - provider: heroku
+    on:
+      branch: master
+    api_key:
+      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
