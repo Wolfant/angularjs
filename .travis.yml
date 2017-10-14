@@ -18,7 +18,6 @@ before_script:
 
 script:
   - "npm rebuild node-sass"
-  - "webpack"
 
 before_deploy:
   - ./.travis/deploy.sh
