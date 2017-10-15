@@ -1,0 +1,41 @@
+---
+- hosts: "{{ target }}"
+  remote_user: "{{ user }}"
+  tasks:
+
+  - name: Install Pre Req Fedora
+    dnf:
+      name: "{{ item }}"
+      state: latest
+    when: os == Fedora
+    with_items:
+      - npm
+      - ruby
+      - ruby-devel
+
+  - name: Install NPM Ubuntu
+    dnf:
+      name: "{{ item }}"
+      state: latest
+    when: os == Ubuntu
+    with_items:
+      - npm
+      - python-software-properties
+      - ruby
+      - ruby-dev
+
+  - name: Install NPM Ubuntu
+    dnf:
+      name: npm
+      state: latest
+    when: os == Ubuntu
+
+  - name: Install "surge" package globally.
+    npm:
+      name: surge
+      global: yes
+
+  - name: Install "travis" package.
+    gem:
+      name: travis
+      state: present
