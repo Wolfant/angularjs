@@ -16,13 +16,6 @@ before_deploy:
 deploy:
 # coverage report on:
 # domain/coverage/report/
-  - provider: heroku
-    app: angularjs-ws
-    on:
-      branch: test
-    api_key:
-      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
-
   - provider: surge
     domain: wolfantqa.surge.sh
     project: ./coverage/report/
@@ -33,16 +26,20 @@ deploy:
   - provider: heroku
     app: angularjs-ws
     on:
+      branch: test
+    api_key:
+      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
+
+  - provider: heroku
+    app: angularjs-ws
+    on:
       branch: stagin
     api_key:
       secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
 
-  - provider: openshift
-    user: antonio.insuasti
-    password:
-      secure: FvODgH5EnOpYs/DzeLGSGp3227Vq50k56VCG/7r0GbrVRRVz8Cy4WtI+cZzhq/PBkoMDQLpptlkDYdUXfXhxpq+sqOod9D7KS//Df1MywvwlsxWBzP6nK1q4yr77MIRiaD7ygzs17R+mplcTc6wzZrv3/H2XxHRXjcqD9QSCRdJHz99sFMDWJfNyHjXHmccQY1ikLwtdKcsGLsQur69/Pk7lepkVEGtUSEZU22XNy4+77LpGfopaQKSA4c4lTHZsXaRZeFpq1XUWfSOV/yPIwPIrLmqmA4N78eWNduFsfw2Wwoxo1tjZ+Fbasv5phON6X/hLDJry1UiUi9NVA2FUopDCh/iPIJgLsMR7s80Ii+6cvGx21ScjMn6HTB7uUeKNo9keRVDTivIh961la0WXdsg34vpzjE06IAZtWEfA9tvZSv5Lk8nF85ItI8RPX7cQPGAAor9aoShYB5xrofmtwBIhh3QkJzSomU6p4ptiKIHC5lOAGf5lRKT5wMfayyTfKLvYAqIxVmt+zruI7I822lVLwI7lOmhHEjNEs2+TsmKkDVwTBW37MqTZ5/NChOBL9k9NyQ1ZQx6aQweRWunFwPrcyKxA9CGkk9uh16uMpEOVI6+uU2ehk7cpTisfmMpeG/SDeg1nxwHUwQhWJR8hTFq+qJRRAUATwfrPMmN/4F8=
-    app: angularjs
-    domain: angularjsws-angularjs-wa.1d35.starter-us-east-1.openshiftapps.com
+  - provider: heroku
+    app: angularjs-ws
     on:
-      repo: Wolfant/angularjs
-      branch: test
+      branch: master
+    api_key:
+      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
