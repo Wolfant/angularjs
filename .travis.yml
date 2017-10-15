@@ -44,5 +44,5 @@ deploy:
     password:
       secure: dRgKrRANVM4H277+accb9HV6ayhRIqHniXe9Gh1TRpijFNzzekAZhJRS0qJOMNnDBcyAshfatcGUiTgjBIaXfTgPMqLCsB4ZP8qOUQioeUNUJI1xQ6t08IpwWAKLIj+F7WCZCt3+JmhYRo5JM01adLi+DnfR91IrH0IuteFLO0cPB3vNpV157WCupQP197m1TQae9FZuYHESX+bapzImnZmNjge3kTMC2NbA1SXsWknTdCzN4Lt/fhWo5pIj7jKf0h9OvyvKoEkOA8c2rZAyoySFfS5FddYuVXSG5zNcnyacuy9lEI+3ref+Zs9nvq79eBRCGbtODtVZenfRwt6MInqnr4p4MHwcAvHFDzAN/vRCBBkrttqbQK2Pq/Tpx6HOO9Wjq8Jhph/mxXtAPklirR6grBagEKpYTTfpRWduFE/iN5hLbYvU8JK6TwTJMNLChEq7bH82qvWrN/dgZqtM6EaZ8uO9vD9JMkaTxUHNh36ltVGZ54OvyfWoT9OU99rxdws0Xzw2pp4RR2zAcMmWjuc0+KoBpGVZzLVwH9Zh51+171YfdWRer5UhuP/h1pSk448kUUC0X1KHWsnIxGfNSQRJhqFDgcBL/G4o5nhmZuMXhukH3vT49foTCG+t2JncnIbHU47vX41ZjUXcUawTe+Dpv7uqUYhZVT2kLPbCOZU=
     app: angularjsws
-    domain: ''
+    domain: 'angularjsws-angularjs-wa.1d35.starter-us-east-1.openshiftapps.com'
     on: test
