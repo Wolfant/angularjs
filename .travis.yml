@@ -1,8 +1,7 @@
 language: node_js
 node_js:
 - 6.9.5
-#addons:
-#  firefox: '55.0'
+
 before_install:
 - export CHROME_BIN=/usr/bin/google-chrome
 - export DISPLAY=:99.0
