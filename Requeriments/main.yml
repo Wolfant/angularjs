@@ -1,6 +1,7 @@
 ---
 - hosts: "{{ target }}"
   remote_user: "{{ user }}"
+  become: true
   tasks:
 
   - name: Install PreReq Fedora
@@ -31,14 +32,9 @@
       name: surge
       global: yes
 
-# Ansible bug on Ubuntu gem somtimes not work
+# Ansible bug: on Ubuntu gem sometimes not work
   - name: Install "travis" package.
     gem:
       name: travis
-      state: present
-    when: os == "Fedora"
-
-
-  - name: Install "travis" package.
-    shell: "sudo gem install travis"
-    when: os == "Ubunu"
+      state: lastest
+      include_dependencies: true
