@@ -41,7 +41,3 @@
     become: true
     become_user: "{{ user }}"
     register: gemout
-  - debug:
-      var: gemout  
-
-
