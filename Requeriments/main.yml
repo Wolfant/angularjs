@@ -14,6 +14,7 @@
       - ruby
       - ruby-devel
       - git
+      - nodejs
 
   - name: Install PreReq Ubuntu
     apt:
@@ -26,6 +27,8 @@
       - python-software-properties
       - ruby
       - ruby-dev
+      - nodejs
+      - nodejs-legacy
 
   - name: Install "surge" package globally.
     npm:
@@ -34,7 +37,11 @@
 
 # Ansible bug: on Ubuntu gem sometimes not work
   - name: Install "travis" package.
-    gem:
-      name: travis
-      state: lastest
-      include_dependencies: true
+    shell: "sudo gem install travis "
+    become: true
+    become_user: "{{ user }}"
+    register: gemout
+  - debug:
+      var: gemout  
+
+
