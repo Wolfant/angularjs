@@ -1,7 +1,6 @@
 language: node_js
 node_js:
 - 6.9.5
-
 before_install:
 - export CHROME_BIN=/usr/bin/google-chrome
 - export DISPLAY=:99.0
@@ -14,7 +13,6 @@ before_script:
 - npm install
 before_deploy:
 - "./.travis/deploy.sh"
-
 deploy:
 # coverage report on:
 # domain/coverage/report/
@@ -42,8 +40,9 @@ deploy:
   - provider: openshift
     user: antonio.insuasti
     password:
-      secure: dRgKrRANVM4H277+accb9HV6ayhRIqHniXe9Gh1TRpijFNzzekAZhJRS0qJOMNnDBcyAshfatcGUiTgjBIaXfTgPMqLCsB4ZP8qOUQioeUNUJI1xQ6t08IpwWAKLIj+F7WCZCt3+JmhYRo5JM01adLi+DnfR91IrH0IuteFLO0cPB3vNpV157WCupQP197m1TQae9FZuYHESX+bapzImnZmNjge3kTMC2NbA1SXsWknTdCzN4Lt/fhWo5pIj7jKf0h9OvyvKoEkOA8c2rZAyoySFfS5FddYuVXSG5zNcnyacuy9lEI+3ref+Zs9nvq79eBRCGbtODtVZenfRwt6MInqnr4p4MHwcAvHFDzAN/vRCBBkrttqbQK2Pq/Tpx6HOO9Wjq8Jhph/mxXtAPklirR6grBagEKpYTTfpRWduFE/iN5hLbYvU8JK6TwTJMNLChEq7bH82qvWrN/dgZqtM6EaZ8uO9vD9JMkaTxUHNh36ltVGZ54OvyfWoT9OU99rxdws0Xzw2pp4RR2zAcMmWjuc0+KoBpGVZzLVwH9Zh51+171YfdWRer5UhuP/h1pSk448kUUC0X1KHWsnIxGfNSQRJhqFDgcBL/G4o5nhmZuMXhukH3vT49foTCG+t2JncnIbHU47vX41ZjUXcUawTe+Dpv7uqUYhZVT2kLPbCOZU=
-    app: angularjsws
-    domain: 'angularjsws-angularjs-wa.1d35.starter-us-east-1.openshiftapps.com'
+      secure: FvODgH5EnOpYs/DzeLGSGp3227Vq50k56VCG/7r0GbrVRRVz8Cy4WtI+cZzhq/PBkoMDQLpptlkDYdUXfXhxpq+sqOod9D7KS//Df1MywvwlsxWBzP6nK1q4yr77MIRiaD7ygzs17R+mplcTc6wzZrv3/H2XxHRXjcqD9QSCRdJHz99sFMDWJfNyHjXHmccQY1ikLwtdKcsGLsQur69/Pk7lepkVEGtUSEZU22XNy4+77LpGfopaQKSA4c4lTHZsXaRZeFpq1XUWfSOV/yPIwPIrLmqmA4N78eWNduFsfw2Wwoxo1tjZ+Fbasv5phON6X/hLDJry1UiUi9NVA2FUopDCh/iPIJgLsMR7s80Ii+6cvGx21ScjMn6HTB7uUeKNo9keRVDTivIh961la0WXdsg34vpzjE06IAZtWEfA9tvZSv5Lk8nF85ItI8RPX7cQPGAAor9aoShYB5xrofmtwBIhh3QkJzSomU6p4ptiKIHC5lOAGf5lRKT5wMfayyTfKLvYAqIxVmt+zruI7I822lVLwI7lOmhHEjNEs2+TsmKkDVwTBW37MqTZ5/NChOBL9k9NyQ1ZQx6aQweRWunFwPrcyKxA9CGkk9uh16uMpEOVI6+uU2ehk7cpTisfmMpeG/SDeg1nxwHUwQhWJR8hTFq+qJRRAUATwfrPMmN/4F8=
+    app: angularjs
+    domain: angularjsws-angularjs-wa.1d35.starter-us-east-1.openshiftapps.com
     on:
+      repo: Wolfant/angularjs
       branch: test
