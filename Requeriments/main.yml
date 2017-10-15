@@ -3,39 +3,42 @@
   remote_user: "{{ user }}"
   tasks:
 
-  - name: Install Pre Req Fedora
+  - name: Install PreReq Fedora
     dnf:
       name: "{{ item }}"
       state: latest
-    when: os == Fedora
+    when: os == "Fedora"
     with_items:
       - npm
       - ruby
       - ruby-devel
+      - git
 
-  - name: Install NPM Ubuntu
-    dnf:
+  - name: Install PreReq Ubuntu
+    apt:
       name: "{{ item }}"
       state: latest
-    when: os == Ubuntu
+    when: os == "Ubuntu"
     with_items:
       - npm
+      - git
       - python-software-properties
       - ruby
       - ruby-dev
-
-  - name: Install NPM Ubuntu
-    dnf:
-      name: npm
-      state: latest
-    when: os == Ubuntu
 
   - name: Install "surge" package globally.
     npm:
       name: surge
       global: yes
 
+# Ansible bug on Ubuntu gem somtimes not work
   - name: Install "travis" package.
     gem:
       name: travis
       state: present
+    when: os == "Fedora"
+
+
+  - name: Install "travis" package.
+    shell: "sudo gem install travis"
+    when: os == "Ubunu"
