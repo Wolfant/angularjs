@@ -13,9 +13,9 @@ before_script:
 - npm install
 before_deploy:
 - "./.travis/deploy.sh"
-deploy:
 # coverage report on:
 # domain/coverage/report/
+deploy:
   - provider: surge
     domain: wolfantqa.surge.sh
     project: ./coverage/report/
@@ -27,19 +27,5 @@ deploy:
     app: angularjs-ws
     on:
       branch: test
-    api_key:
-      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
-
-  - provider: heroku
-    app: angularjs-ws
-    on:
-      branch: stagin
-    api_key:
-      secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
-
-  - provider: heroku
-    app: angularjs-ws
-    on:
-      branch: master
     api_key:
       secure: UoUmmt+zqIwAj8Fb9XPh8ApTsioAuZCeeSKOsTOGytyP2f20un+Mx+Qih/piDirhMf5KUUSTaqsG3EsM7Uear4/BeXEf3+jtlI9KkRIziB1C7PLPeH1cbPYd0UDpHIBeEi7chju890RIYgp6bMU7SKMfnnJUKUX6Zbj3Ms7fYSMl9wtE1vbbRvplGGNCYJ1uavQL7cAq1SUz98EvKjXdbR9j28+RdrPfI827gryLcyZzeK36VHqqrbCYy3RHFpk6ka+mIR9KFollCLvuzYZXNIiKVHJvwPfM+3VPuiO0yDkNhsSWEnAKTrYM1pH+lnG++i2prfcVsvIUn625H1ce6OKho+iPfyNm1A6GCRHFKIVj17EFfQOcP4U6Y4PvfVcZmGX68zs9Rs9a1PjJwcF+5zyugD5bIt8S/cNsXivEiJ+BAVHEF/v6Ncfh1cTJqpV02qMi6ZoXby8cKF3ydyRl/61ccrLuSpGXcHvK3P/X202TtvQ+SM0Vmi8afC6BHlH5GyGhyU5k9iE7PTem1/f/fkTj1OS2i166fY5H0tBIx9HvzP3R2GoeofNswDzH9otgo8xDEPg21CDsLJ8ZVlxaFxVvN1mv2eUNGKKcBrmBmloKK/siZ9vQisO7oWgl3xqKRitfBcYzjr2xdnQK63gb2mxDGjF4YyM4A26M5DVjgOw=
